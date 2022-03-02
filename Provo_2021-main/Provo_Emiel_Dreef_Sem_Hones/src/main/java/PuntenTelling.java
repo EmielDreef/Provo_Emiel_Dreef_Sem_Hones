@@ -3,26 +3,44 @@ public class PuntenTelling {
     private static final long MEDIUM_TIJD = 10;
     private static final long LATE_TIJD = 20;
     private static final long EIND_TIJD = 60;
-    private PuntenTellingStrategie strategie;
+    private PuntenTellingStrategie strategie = new LagePuntenStrategie();
+    private long behaaldePunten = 0;
+    private long maxPunten = 0;
 
     public PuntenTellingStrategie berekenStrategie(long tijd){
         Long[] alleTijden = { SNELLE_TIJD, MEDIUM_TIJD, EIND_TIJD };
-        PuntenTellingStrategie[] allePunten = { new HogePuntenStrategie(), new MediumPuntenStrategie(), new LagePuntenStrategie()};
-        PuntenTellingStrategie puntenTelling = new LagePuntenStrategie();
+        PuntenTellingStrategie[] alleStrategiën = { new HogePuntenStrategie(), new MediumPuntenStrategie(), new LagePuntenStrategie()};
         int index = 0;
 
         while(index < alleTijden.length) {
             if(tijd < alleTijden[index]){
-                puntenTelling = allePunten[index];
+                strategie = alleStrategiën[index];
                 break;
             }
             index++;
         }
-        return puntenTelling;
+        return strategie;
     }
 
-    public int voerPuntenTellingUit(long tijd){
+    public void voerPuntenTellingUit(long tijd){
         strategie = berekenStrategie(tijd);
-        return strategie.geefPunten();
+        behaaldePunten += strategie.geefPunten();
+        System.out.println("Deze vraag is juist, je krijgt: " + strategie.geefPunten() + " van de " + new HogePuntenStrategie().geefPunten() + " punten.");
+    }
+
+    public long getBehaaldePunten(){
+        return behaaldePunten;
+    }
+
+    public long getMaxPunten(){
+        return maxPunten;
+    }
+
+    public void setBehaaldePunten(long nieuweBehaaldPunten){
+        behaaldePunten = nieuweBehaaldPunten;
+    }
+
+    public void setMaxPunten(long nieuweMaxPunten){
+        maxPunten = nieuweMaxPunten;
     }
 }

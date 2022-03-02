@@ -1,13 +1,11 @@
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class StartKennisToetsController {
     private static final PuntenTelling puntenTelling = new PuntenTelling();
-    private static long behaaldePunten = 0;
-    private static long maxPunten;
-    private static KennisToetsTimer vraagTimer = new KennisToetsTimer();
-    private static KennisToetsTimer toetsTimer = new KennisToetsTimer();
+
+    private static final KennisToetsTimer vraagTimer = new KennisToetsTimer();
+    private static final KennisToetsTimer toetsTimer = new KennisToetsTimer();
 
     public static void main(String[] args){
         startKennisToets();
@@ -15,12 +13,12 @@ public class StartKennisToetsController {
     }
 
     private static void toonResultaten() {
-        System.out.println("Je hebt " + behaaldePunten + " van de " + maxPunten + " punten behaald");
+        System.out.println("Je hebt " + puntenTelling.getBehaaldePunten() + " van de " + puntenTelling.getMaxPunten() + " punten behaald");
     }
 
     public static void startKennisToets(){
         List<Vraag> vragenLijst = new Kennistoets().getVragenLijst();
-        maxPunten = vragenLijst.size() * 5L;
+        puntenTelling.setMaxPunten(vragenLijst.size() * 5L);
         toetsTimer.start();
         for(Vraag vraag: vragenLijst) {
             vraagTimer.start();
@@ -31,9 +29,8 @@ public class StartKennisToetsController {
             }
             Antwoord studentAntwoord = new Antwoord(scanner.nextLine());
             vraagTimer.stop();
-            if(vraag.getCorrectAntwoord().toLowerCase().equals(studentAntwoord.getAntwoord().toLowerCase())){
-                behaaldePunten += puntenTelling.voerPuntenTellingUit(vraagTimer.getVerlopenSeconden());
-                System.out.println("Deze vraag is juist, je krijgt: " + puntenTelling.voerPuntenTellingUit(vraagTimer.getVerlopenSeconden()) + " van de " + new HogePuntenStrategie().geefPunten() + " punten.");
+            if(vraag.getCorrectAntwoord().equalsIgnoreCase(studentAntwoord.getAntwoord())){
+                puntenTelling.voerPuntenTellingUit(vraagTimer.getVerlopenSeconden());
             }
             else{
                 System.out.println("Deze vraag is onjuist je krijgt geen punten.");
