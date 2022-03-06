@@ -6,6 +6,16 @@ public class Kennistoets {
 
     private int kennistoetsId;
     private String naam;
+
+    public int getMaxTijd() {
+        return maxTijd;
+    }
+
+    public void setMaxTijd(int maxTijd) {
+        this.maxTijd = maxTijd;
+    }
+
+    private int maxTijd = 5;
     private Collection<Antwoord> lijstMetDrieFouteAntwoorden = new ArrayList<>();
 
     private List<Vraag> vragenLijst = new ArrayList<>();
