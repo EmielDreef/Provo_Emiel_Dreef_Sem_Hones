@@ -1,3 +1,3 @@
 public interface PuntenTellingStrategie {
-    int geefPunten();
+    int geefPunten(int punten);
 }

@@ -16,7 +16,11 @@ public class KennisToetsAfname implements IKennisToetsAfname{
 
     public static void startKennisToets(){
         List<Vraag> vragenLijst = kennisToets.getVragenLijst();
-        puntenTelling.setMaxPunten(vragenLijst.size() * 5L);
+        int maxPunten = 0;
+        for(Vraag vraag : vragenLijst){
+            maxPunten += vraag.getPunten();
+        }
+        puntenTelling.setMaxPunten(maxPunten);
         toetsTimer.start();
         for(Vraag vraag: vragenLijst) {
             if(toetsObserver.isTijdVoorbij()) {
@@ -32,7 +36,7 @@ public class KennisToetsAfname implements IKennisToetsAfname{
                 Antwoord studentAntwoord = new Antwoord(scanner.nextLine());
                 vraagTimer.stop();
                 if (vraag.getCorrectAntwoord().equalsIgnoreCase(studentAntwoord.getAntwoord())) {
-                    puntenTelling.voerPuntenTellingUit(vraagTimer.getVerlopenSeconden());
+                    puntenTelling.voerPuntenTellingUit(vraagTimer.getVerlopenSeconden(), vraag);
                 } else {
                     System.out.println("Deze vraag is onjuist je krijgt geen punten.");
                 }

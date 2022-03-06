@@ -1,6 +1,4 @@
 public class LatePuntenStrategie implements PuntenTellingStrategie {
     @Override
-    public int geefPunten() {
-        return 2;
-    }
+    public int geefPunten(int punten) { return punten / 3;}
 }

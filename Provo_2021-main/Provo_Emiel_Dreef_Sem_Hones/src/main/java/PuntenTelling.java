@@ -22,10 +22,10 @@ public class PuntenTelling {
         return strategie;
     }
 
-    public void voerPuntenTellingUit(long tijd){
+    public void voerPuntenTellingUit(long tijd, Vraag vraag){
         strategie = berekenStrategie(tijd);
-        behaaldePunten += strategie.geefPunten();
-        System.out.println("Deze vraag is juist, je krijgt: " + strategie.geefPunten() + " van de " + new HogePuntenStrategie().geefPunten() + " punten.");
+        behaaldePunten += strategie.geefPunten(vraag.getPunten());
+        System.out.println("Deze vraag is juist, je krijgt: " + strategie.geefPunten(vraag.getPunten()) + " van de " + new HogePuntenStrategie().geefPunten(vraag.getPunten()) + " punten.");
     }
 
     public long getBehaaldePunten(){

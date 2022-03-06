@@ -1,6 +1,6 @@
 public class MediumPuntenStrategie implements PuntenTellingStrategie {
     @Override
-    public int geefPunten() {
-        return 3;
+    public int geefPunten(int punten) {
+        return punten / 2;
     }
 }

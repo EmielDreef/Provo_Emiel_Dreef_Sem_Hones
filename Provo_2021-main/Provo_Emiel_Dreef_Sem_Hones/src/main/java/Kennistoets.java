@@ -6,6 +6,7 @@ public class Kennistoets {
 
     private int kennistoetsId;
     private String naam;
+    private int maxTijd = 60;
 
     public int getMaxTijd() {
         return maxTijd;
@@ -15,13 +16,12 @@ public class Kennistoets {
         this.maxTijd = maxTijd;
     }
 
-    private int maxTijd = 5;
     private Collection<Antwoord> lijstMetDrieFouteAntwoorden = new ArrayList<>();
 
     private List<Vraag> vragenLijst = new ArrayList<>();
     Vraag kav1 = new KortAntwoordVraag(1,"Wat is je favoriete kleur?",new Antwoord("Rood"),5);
-    Vraag kav2 = new KortAntwoordVraag(2,"Wat is je favoriete melk?",new Antwoord("Wit"),3);
-    Vraag kav3 = new KortAntwoordVraag(3,"Wat is je favoriete hond?",new Antwoord("Hond"),12);
+    Vraag kav2 = new KortAntwoordVraag(2,"Wat is je favoriete melk?",new Antwoord("Wit"),5);
+    Vraag kav3 = new KortAntwoordVraag(3,"Wat is je favoriete hond?",new Antwoord("Hond"),10);
     Vraag mkv1;
     Vraag mkv2;
 
@@ -30,8 +30,8 @@ public class Kennistoets {
         lijstMetDrieFouteAntwoorden.add(new Antwoord("Jonge kaas"));
         lijstMetDrieFouteAntwoorden.add(new Antwoord("Geen kaas"));
 
-        mkv1 = new MeerkeuzeVraag(4,"Wat is je favoriete kaas?",new Antwoord("Oude Kaas"), lijstMetDrieFouteAntwoorden,8);
-        mkv2 = new MeerkeuzeVraag(5,"Wat is je favoriete beer?",new Antwoord("Brother Bear"),lijstMetDrieFouteAntwoorden, 10);
+        mkv1 = new MeerkeuzeVraag(4,"Wat is je favoriete kaas?",new Antwoord("Oude Kaas"), lijstMetDrieFouteAntwoorden,5);
+        mkv2 = new MeerkeuzeVraag(5,"Wat is je favoriete beer?",new Antwoord("Brother Bear"),lijstMetDrieFouteAntwoorden, 5);
     }
 
     public Kennistoets(){

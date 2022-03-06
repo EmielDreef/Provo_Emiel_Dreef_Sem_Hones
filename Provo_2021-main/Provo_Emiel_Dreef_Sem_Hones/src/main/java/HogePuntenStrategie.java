@@ -1,6 +1,6 @@
 public class HogePuntenStrategie implements PuntenTellingStrategie {
     @Override
-    public int geefPunten() {
-        return 5;
+    public int geefPunten(int punten) {
+        return punten;
     }
 }
