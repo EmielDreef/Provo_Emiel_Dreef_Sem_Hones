@@ -15,5 +15,3 @@ V
 &src/main/java/HogePuntenStrategie.java,0\0\0031e95d702933129389425357bc43e754719323
 V
 &src/main/java/LagePuntenStrategie.java,f\3\f3fb7340b00c7bba8498c1a37cd184196052c590
-N
-src/main/java/Kennistoets.java,1\4\1428fe9941a3be742ddbc2101707debbe35b5f6b
