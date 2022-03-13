@@ -15,3 +15,19 @@ V
 &src/main/java/HogePuntenStrategie.java,0\0\0031e95d702933129389425357bc43e754719323
 V
 &src/main/java/LagePuntenStrategie.java,f\3\f3fb7340b00c7bba8498c1a37cd184196052c590
+Q
+!src/main/java/IToetsObserver.java,9\5\958afd2d1439888a92ad1a5110026079ccba2bd4
+J
+src/main/java/Student.java,8\9\89598c6ecb5bf4c7b1602d3f767d32797977ad7d
+U
+%src/main/java/IKennisToetsAfname.java,4\0\40ce8451a3c8ce30db7a8da21ebf510912d39316
+T
+$src/main/java/KennisToetsAfname.java,d\0\d06ff3951aa8d6164e3a60e135683ff08cf5f683
+N
+src/main/java/Kennistoets.java,1\4\1428fe9941a3be742ddbc2101707debbe35b5f6b
+]
+-src/main/java/StartKennisToetsController.java,f\1\f17343f91411d5138989575349deb1279d02e30a
+P
+ src/main/java/PuntenTelling.java,a\3\a38a4de6b9118ae0ea811173430e93e5b972be69
+P
+ src/main/java/ToetsObserver.java,e\7\e700600ef8919fe4a823f83f9943e1c1a309ecd0

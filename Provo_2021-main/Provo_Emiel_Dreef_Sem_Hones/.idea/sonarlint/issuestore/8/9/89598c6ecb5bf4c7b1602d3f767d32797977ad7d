@@ -1,0 +1,9 @@
+
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(îÊÈ¬
+A
+java:S1068"&Remove this unused "id" private field.(ôç¼Óþÿÿÿÿ
+C
+java:S1068"(Remove this unused "naam" private field.(Ž‡Œ¦ùÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
