@@ -7,7 +7,7 @@ public class PuntenTelling {
     private long behaaldePunten = 0;
     private long maxPunten = 0;
 
-    public PuntenTellingStrategie berekenStrategie(long tijd){
+    private PuntenTellingStrategie berekenStrategie(long tijd){
         Long[] alleTijden = { SNELLE_TIJD, MEDIUM_TIJD, EIND_TIJD };
         PuntenTellingStrategie[] alleStrategiën = { new HogePuntenStrategie(), new MediumPuntenStrategie(), new LagePuntenStrategie()};
         int index = 0;
